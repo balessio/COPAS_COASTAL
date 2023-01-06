@@ -1,0 +1,5 @@
+This Jupyter notebook implements the Atmospheric River detection algorithm from Guan, B., & Waliser, D. E. (2015). Detection of atmospheric rivers: Evaluation and application of an algorithm for global studies. Journal of Geophysical Research: Atmospheres, 120(24), 12514-12535.
+
+It is put into a single function, for which you input integrate water vapor transport vector data, readily available from reanalysis products such as ERA5 (example download from ERA5 included). Note that a large region of IVT data is needed to ensure no artificial cutoff of ARs for not being long enough.
+
+The function returns a list of all ARs found, including properties such as weather or not they make landfall and the location of the ends of their axes. For more precise information, it is recommended to use the AR catalog available online from Guan et al. This program is meant to facilitate the detection of ARs in dates and datasets not available from the Guan et al. catalog, but does not include all of their features such as time-tracking.

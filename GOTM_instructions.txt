@@ -1,0 +1,26 @@
+
+Overview on GOTM: this is a one-dimesnional ocean-atmosphere interaction model that tells you things like currents, temperature, and salinity in response to fluxes or applied external horizontal gradients. It is periodically updated here:
+
+https://gotm.net/portfolio/
+
+And you can find installation instructions there.
+
+
+######
+
+Instructions on how to run this program
+
+The documentation is very sparse. It seems it was designed for you to be able to use the "make" command to build the input files for each test case, and then run from there, but when I do that it says I am missing some programs which I haven't found on their github. So here is my workaround: Copy all files from your desired folder within "cases-master/" and paste them into "GOTM_build". They will get mixed up with all of the other files in there, so recall that originally it has: "cmake_install.cmake", "Makefile_old" (which I named "_old" to prevent confusion with the Makefile from the test case which you copy over), "features.log", "CMakeCache.txt", "install_manifest.txt", "gotm.exe", and this file. Make sure the pwd is GOTM_build, then run the following command:
+
+./gotm gotm.yaml
+
+It should run successfully and produce "<test case name>.nc" and "restart.nc". These are your data output files. Now you can click on the finder window and press Cmd-Z to delete the test case files from the "GOTM_build" folder (since you copied them over they still exist in the "cases-master/" folder). You can move the .nc files wherever you like for your data analysis.
+
+Alternatively, you can edit the test case's "gotm.yaml" file to include the full path to each data file, and check that "output:\n\t<filename>:" at the end of the .yaml file is the correct filename (it's weird because it doesn't appear like you are defining the path there, but you are). Then run:
+
+./gotm cases-master/<choose a case>/gotm.yaml
+
+
+######
+
+To run your own model, copy one of the test cases into another new folder within cases-master/, then edit the .yaml file in a text editor with your desired parameters and input files. Make sure the input files are formatted correctly, which you can verify by looking at the examples.
