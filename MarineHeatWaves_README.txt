@@ -1,0 +1,1 @@
+The MarineHeatWaves.ipynb Jupyter notebook is a basic application of the open-source Hobday et al. 2016 detection code (also included in the file marineHeatWaves.py). I implement a basic loop for each lat lon point and save the output of the Hobday code into a dictionary with a key determined by the lat lon.
