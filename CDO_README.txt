@@ -13,7 +13,11 @@ If you have lots of commands to execute with CDO, or perhaps want to run a loop,
 touch example.sh
 
 then open example.sh in a text-editor, and paste the following:
-cdo yhouravg in.nc out.nc
+cdo yhouravg in1.nc out1.nc
+cdo yhouravg in2.nc out2.nc
+cdo yhouravg in3.nc out3.nc
 
 To run this command, type the following in the terminal:
 bash example.sh
+
+and it will generate the files out1.nc, out2.nc, and out3.nc
